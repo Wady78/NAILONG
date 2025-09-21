@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function noClick() {
+      let yesBtn = document.getElementById("yesBtn");
+      let size = parseInt(window.getComputedStyle(yesBtn).fontSize);
+      yesBtn.style.fontSize = (size + 10) + "px"; // YES grows
+    }
+
+    function yesClick() {
+      // Change picture to smiling version
+      let photo = document.querySelector('.photo img');
+      photo.src = "hersmile.jpg"; // put her smiling picture here
+      // Update the message
+      let message = document.querySelector('h1');
+      message.textContent = 'See you next meeting 💕';
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <!-- Her picture -->
+  <div class="photo">
+    <img src="herpic.jpg" alt="Her Picture" class="her-pic">
+  </div>
+
+  <h1>Can I take you on a date? 💖</h1>
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClick()">YES</button>
+    <button id="noBtn" onclick="noClick()">NO</button>
+  </div>
+</body>
+</html>
